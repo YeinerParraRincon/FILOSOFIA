@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal de Filosofía</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3d59;
+            --secondary-color: #2b4f76;
+            --accent-color: #f5b461;
+            --text-color: #ffffff;
+            --hover-color: #345d8a;
+            --card-bg: rgba(30, 61, 89, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('/api/placeholder/1920/1080') center/cover fixed,
+                        linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-blend-mode: overlay;
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            background-color: rgba(43, 79, 118, 0.95);
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Philosopher', serif;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: var(--accent-color);
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            font-size: 1.1rem;
+        }
+
+        .filosofos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .filosofo-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .filosofo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            background-color: var(--hover-color);
+        }
+
+        .filosofo-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .filosofo-card a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: rgba(245, 180, 97, 0.2);
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .filosofo-card a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .epoca {
+            font-style: italic;
+            color: #b0bec5;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        nav {
+            background-color: rgba(43, 79, 118, 0.95);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            background-color: rgba(245, 180, 97, 0.1);
+        }
+
+        .nav-links a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 2rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background-color: #f6c681;
+            transform: translateY(-2px);
+        }
+
+        .filosofo-info {
+            margin-top: 1.5rem;
+        }
+
+        .filosofo-info ul {
+            margin-left: 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .filosofo-info li {
+            margin-bottom: 0.5rem;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portal de Filosofía</h1>
+        <p>Explora el pensamiento de los grandes filósofos de la historia</p>
+    </header>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="antiguos.html">Antiguos</a></li>
+            <li><a href="medievales.html">Medievales</a></li>
+            <li><a href="modernos.html">Modernos</a></li>
+            <li><a href="contemporaneos.html">Contemporáneos</a></li>
+        </ul>
+    </nav>
+
+    <div class="intro">
+        <p>Bienvenido al portal de filosofía. Aquí podrás explorar las ideas y pensamientos de los filósofos más influyentes de la historia. Selecciona una época para conocer más sobre sus representantes.</p>
+    </div>
+
+    <div class="filosofos-grid">
+        <div class="filosofo-card">
+            <h3>Filosofía Antigua</h3>
+            <p>Desde los presocráticos hasta el helenismo</p>
+            <a href="antiguos.html">Explorar filósofos antiguos →</a>
+        </div>
+
+        <div class="filosofo-card">
+            <h3>Filosofía Medieval</h3>
+            <p>El pensamiento durante la Edad Media</p>
+            <a href="medievales.html">Explorar filósofos medievales →</a>
+        </div>
+
+        <div class="filosofo-card">
+            <h3>Filosofía Moderna</h3>
+            <p>Del Renacimiento a la Ilustración</p>
+            <a href="modernos.html">Explorar filósofos modernos →</a>
+        </div>
+
+        <div class="filosofo-card">
+            <h3>Filosofía Contemporánea</h3>
+            <p>El pensamiento desde el siglo XIX</p>
+            <a href="contemporaneos.html">Explorar filósofos contemporáneos →</a>
+        </div>
+    </div>
+</body>
+</html>

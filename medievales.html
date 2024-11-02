@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Filósofos Medievales - Portal de Filosofía</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3d59;
+            --secondary-color: #2b4f76;
+            --accent-color: #f5b461;
+            --text-color: #ffffff;
+            --hover-color: #345d8a;
+            --card-bg: rgba(30, 61, 89, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('/api/placeholder/1920/1080') center/cover fixed,
+                        linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-blend-mode: overlay;
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            background-color: rgba(43, 79, 118, 0.95);
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Philosopher', serif;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: var(--accent-color);
+        }
+
+        .filosofos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .filosofo-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .filosofo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            background-color: var(--hover-color);
+        }
+
+        .filosofo-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        nav {
+            background-color: rgba(43, 79, 118, 0.95);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            background-color: rgba(245, 180, 97, 0.1);
+        }
+
+        .nav-links a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 2rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background-color: #f6c681;
+            transform: translateY(-2px);
+        }
+
+        .filosofo-info {
+            margin-top: 1.5rem;
+            color: #e0e0e0;
+        }
+
+        .epoca {
+            font-style: italic;
+            color: #b0bec5;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Filósofos Medievales</h1>
+        <p>El pensamiento filosófico durante la Edad Media</p>
+    </header>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="antiguos.html">Antiguos</a></li>
+            <li><a href="medievales.html">Medievales</a></li>
+            <li><a href="modernos.html">Modernos</a></li>
+            <li><a href="contemporaneos.html">Contemporáneos</a></li>
+        </ul>
+    </nav>
+
+    <a href="index.html" class="back-button">← Volver al inicio</a>
+
+    <div class="filosofos-grid">
+        <div class="filosofo-card">
+            <h3>San Agustín</h3>
+            <div class="epoca">354 - 430 d.C.</div>
+            <div class="filosofo-info">
+                <p>Uno de los padres de la Iglesia más influyentes. Su obra "La Ciudad de Dios" y sus "Confesiones" son fundamentales en el pensamiento cristiano y la filosofía medieval.</p>
+            </div>
+        </div>
+
+        <div class="filosofo-card">
+            <h3>Santo Tomás de Aquino</h3>
+            <div class="epoca">1225 - 1274</div>
+            <div class="filosofo-info">
+                <p>Principal representante de la filosofía escolástica. Su obra "Suma Teológica" representa la síntesis del pensamiento cristiano con la filosofía aristotélica.</p>
+            </div>
+        </div>
+
+        <div class="filosofo-card">
+            <h3>Averroes</h3>
+            <div class="epoca">1126 - 1198</div>
+            <div class="filosofo-info">
+                <p>Filósofo andalusí conocido por sus importantes comentarios sobre Aristóteles y su influencia en el pensamiento medieval tanto islámico como cristiano.</p>
+            </div>
+        </div>
+
+        <div class="filosofo-card">
+            <h3>Maimónides</h3>
+            <div class="epoca">1138 - 1204</div>
+            <div class="filosofo-info">
+                <p>Filósofo judío medieval que buscó conciliar la fe judía con el racionalismo aristotélico. Su obra "Guía de perplejos" es fundamental en la filosofía medieval.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
